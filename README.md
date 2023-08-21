@@ -2,13 +2,13 @@
 ### Introduction
 The project focuses on the task of named entity recognition (NER) and relation extraction (RE) on the BioRED dataset. In this repository, I provide the training code, pre-trained models, and data processing code. Additionally, I have included a simple website for utilizing the NER&RE system.
 ## Content
-[Annotation]
+- [Annotation](#annotation)
 This folder contains all file to convert biomedical enitites to their indetifier codes.
-[PubRunner]
+- [PubRunner](#pubrunner)
 Framework to download abstracts from PubMED
-[PubTator]
+- [PubTator](#pubtator)
 Run cmd: pubrunner --test . (to get abstract from config file)
-[BioRED-NER-RE](#ner-re-biored)
+- [BioRED-NER-RE](#ner-re-biored)
 - [Named Entity Recognition](#named-entity-recognition)
     Firstly, run the rungeneratedata.sh to get dataset.
     Secondly, add variables into runcode.sh and run it to get result of NER task. 
@@ -23,6 +23,6 @@ Run cmd: pubrunner --test . (to get abstract from config file)
     [Front-end]
     Run cmd: npm run start 
 - [Contact](#contact)
-    email: namvohoang.contact@gmail.com
+    If you have any questions or related concerns, please direct me to namvohoang.contact@gmail.com
 
 
