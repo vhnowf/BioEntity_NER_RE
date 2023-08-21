@@ -22,7 +22,7 @@ Run cmd: pubrunner --test . (to get abstract from config file)
     Run cmd: npm start
     [Front-end]
     Run cmd: npm run start 
-[Contact](#contact)
+- [Contact](#contact)
     email: namvohoang.contact@gmail.com
 
 
