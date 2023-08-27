@@ -1,0 +1,22 @@
+name: PMCOA_Dataset
+version: 0.1
+resources:
+  full:
+  - PMCOA:
+      format: bioc
+  test:
+  - PUBMED_CUSTOM:
+      pmids: '15271224'
+      format: bioc
+      rename: PUBMED
+run:
+- python fixBioc.py --inBiocXML {IN:PUBMED/%} --outBiocXML {OUT:fixed/%.xml}
+- python runTool.py --tool dnorm --inBioc {IN:fixed/%} --outBioc {OUT:DNorm/%} --mem
+  20 --maxLength 100000
+- python filter.py --type cancerAnnotation --inBioc {IN:DNorm/%} --outBioc {OUT:DNormNormalize/%}
+- python runTool.py --tool GNormPlus_java --inBioc {IN:DNormNormalize/%} --outBioc
+  {OUT:GNormPlus/%} --mem 20 --maxLength 100000
+- python runTool.py --tool tmchem --inBioc {IN:GNormPlus/%} --outBioc {OUT:tmChem/%}
+  --mem 20 --maxLength 100000
+- python filter.py --type geneDrugVarAnnotation --inBioc {IN:tmChem/%} --outBioc
+  {OUT:processed/%}
